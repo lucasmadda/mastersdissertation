@@ -41,3 +41,64 @@ To extract sentences from each **medical note** and perform **NLP preprocessing*
 
 This repository provides tools for tokenizing clinical text, making it easier to apply **Natural Language Processing (NLP) techniques**.
 
+## 6️⃣ Generating Clinical Note Embeddings  
+
+The script **`create_embeddings.py`** processes clinical notes by generating sentence embeddings. These embeddings are later stored in a **PostgreSQL database** using **pgvector**, with `psycopg` or another database integration tool.  
+
+To execute the script, use the following command:  
+
+```bash
+python create_embeddings.py [-c | --from_checkpoint]
+```
+
+If `--from_checkpoint` is set to `True`, the script resumes from the last saved checkpoint.  
+
+## 7️⃣ Materialized Views for MIMIC-III  
+
+The script **`materialized_mimic_views.sql`** provides the necessary queries to create **materialized views** that store hourly information on **vital signs, laboratory results, and blood tests**.  
+
+These views enable efficient retrieval of time-series clinical data from the MIMIC-III dataset.  
+
+To apply the script, run:  
+```bash
+psql -U <your_user> -d <your_database> -f materialized_mimic_views.sql
+```
+
+This process ensures that key clinical data is precomputed and readily available for analysis.  
+
+## 8️⃣ Data Processing  
+
+A **CSV file extracted from the database** was used for data processing. The script applies various transformations to clean and structure the data.  
+
+⚠️ **Note:** Outputs have been removed due to the sensitive nature of MIMIC data.  
+
+For detailed processing steps, refer to **`treating_data.ipynb`** in this repository.
+
+## 9️⃣ Converting Data to NPZ Format  
+
+The extracted data is converted into **NPZ format**, optimized for efficient storage and model training.  
+
+- The script **`create_npz_data.ipynb`** handles the conversion process.  
+- The resulting NPZ files are processed by **`data_handler.py`**, which correctly splits the data into folds and ensures it is in the appropriate format for model input.  
+
+This approach follows the methodology from the repository:  
+🔗 [Rep (GitHub)](https://github.com/PeterChe1990/GRU-D)  
+
+This step is essential for preparing the dataset for training and evaluation.  
+
+## 🔟 Training the Model  
+
+The model is trained using **`train_model.py`**.  
+
+Run:  
+```bash
+python train_model.py
+```
+
+Refer to the script for details.  
+
+## 1️⃣1️⃣ Post-Training Analysis  
+
+For analyses conducted after model training, please contact me via email:  
+
+📩 **lucasgomesmadda@hotmail.com**  
