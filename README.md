@@ -1,6 +1,6 @@
 # mastersdissertation  
 
-This repository contains the code for the experiments conducted as part of my **MSc Dissertation in Production Engineering at PUC-Rio**.  
+This repository contains the code for the experiments conducted as part of my **MSc Dissertation in Industrial Engineering at PUC-Rio**.  
 
 ## 📌 Dissertation Title  
 **Evaluating Ontologically-Aware Large Language Models: An Experiment in Sepsis Prediction**  
