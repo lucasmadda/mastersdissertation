@@ -1,4 +1,12 @@
-# mastersdissertation
+# mastersdissertation  
+
+This repository contains the code for the experiments conducted as part of my **MSc Dissertation in Production Engineering at PUC-Rio**.  
+
+## 📌 Dissertation Title  
+**Evaluating Ontologically-Aware Large Language Models: An Experiment in Sepsis Prediction**  
+
+The project explores the integration of **ontology-based techniques** with **Large Language Models (LLMs)** to improve **sepsis prediction** using data from the **MIMIC-III** clinical dataset. The repository includes mostly all necessary scripts for data preprocessing, feature extraction, model training, and evaluation.  
+
 
 ## 1️⃣ Downloading MIMIC-III
 
@@ -23,7 +31,7 @@ To define **which patients had sepsis and when**, I used the repository below:
 
 ### **MIMIC-III Sepsis-3 Labels**  
 An SQL and Python-based implementation for extracting **Sepsis-3** labels in the MIMIC-III dataset.  
-This code is part of **[https://github.com/mmr12/MIMIC-III-sepsis-3-labels]**.  
+This code is part of **🔗 [MIMIC-III Sepsis-3 Labels](https://github.com/mmr12/MIMIC-III-sepsis-3-labels)**.  
 
 ## 4️⃣ Installing pgvector  
 
